@@ -1,0 +1,13 @@
+.task-form{
+    margin-left: 30px;
+    margin-bottom: 20px;
+    font-size:smaller;
+}
+
+.property-label{
+    font-weight: 600;
+}
+
+.property-value{
+    padding-left: 10px;
+}

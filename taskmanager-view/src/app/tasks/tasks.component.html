@@ -1,0 +1,28 @@
+<label class="tasklist-header">Task list</label>
+<div class="tasks-content">
+<ul>
+  <table datatable [dtOptions]="dtOptions" class="table table-bordered table-striped table-hover task-view">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Task Description</th>
+        <th>Created Date</th>
+        <th>Assigned To</th>
+        <th>Status</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of task_list">
+        <td>{{task.taskId}}</td>
+        <td>{{task.taskDescription}}</td>
+        <td>{{this.taskService.formatDBDate(task.createdDate)}}</td>
+        <td>{{this.taskService.formatDBString(task.assignedTo)}}</td>
+        <td>{{this.taskService.formatDBString(task.taskStatus)}}</td>
+        <td><button class="btn" type="button" (click)="onSelect(task)">Details</button></td>
+      </tr>
+    </tbody>
+  </table>
+</ul>
+</div>
+<app-task-comments [Task]="selectedTask"></app-task-comments>

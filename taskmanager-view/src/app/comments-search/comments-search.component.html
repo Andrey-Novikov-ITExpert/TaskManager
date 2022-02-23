@@ -1,0 +1,15 @@
+<div class="search-component">
+  <label class="component-caption">Search by comment</label>
+  <textarea class="comment" id="new-comment-text" placeholder="Comment text..." [(ngModel)]="searchText"></textarea>
+  <button class="btn" (click)="search()" [(ngModel)]="searchText">Search</button>
+  <div class="comment-component"></div>
+  <div *ngFor="let comment of comment_list">
+    <div class="comment">
+      <div class="comment-header"><a (click)="openTask(comment.taskid)">Open task</a></div>
+      <div class="comment-body"><label id="comment-text" placeholder="comment">{{comment?.commenttext}}</label></div>
+      <div class="comment-footer"><label id="comment-date" placeholder="comment-date">{{comment?.dateadded}}</label>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

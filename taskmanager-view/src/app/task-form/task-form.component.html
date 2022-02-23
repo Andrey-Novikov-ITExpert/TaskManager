@@ -1,0 +1,33 @@
+<div class="task-form">
+    <table>
+        <tr>
+            <td class="property-label">Task ID</td>
+            <td class="property-value">{{Task?.taskId}}</td>
+        </tr>
+        <tr>
+            <td class="property-label">Task Description</td>
+            <td class="property-value">{{Task?.taskDescription}}</td>
+        </tr>
+        <tr>
+            <td class="property-label">Created date</td>
+            <td class="property-value"></td>
+        </tr>
+        <tr>
+            <td class="property-label">Assigned To</td>
+            <td class="property-value">{{Task?.assignedTo}}</td>
+        </tr>
+        <tr>
+            <td class="property-label">Status</td>
+            <td class="property-value">{{Task?.taskStatus}}</td>
+        </tr>
+    </table>
+</div>
+<div class="comment-component">
+  <div *ngFor="let comment of comment_list">
+    <div class="comment">
+      <div class="comment-header"></div>
+      <div class="comment-body"><label id="comment-text" placeholder="comment">{{comment?.commenttext}}</label></div>
+      <div class="comment-footer"><label id="comment-date" placeholder="comment-date">{{comment?.dateadded}}</label></div>
+    </div>
+  </div>
+</div>
